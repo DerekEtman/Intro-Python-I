@@ -7,7 +7,7 @@ class Latlon:
         self.lat = lat
         self.lon = lon
     def __repr__(self):
-        print(self.lat, self.lon)
+        return f'{self.lat} {self.lon}'
 
 # Make a class Waypoint that can be passed parameters `name`, `lat`, and `lon` to the
 # constructor. It should inherit from LatLon. Look up the `super` method.
@@ -18,7 +18,7 @@ class Waypoint(Latlon):
         super().__init__(lat, lon)
         self.name = name
     def __repr__(self):
-        return self.name
+        return f'{self.name} {self.lon} {self.lat}'
 
 # Make a class Geocache that can be passed parameters `name`, `difficulty`,
 # `size`, `lat`, and `lon` to the constructor. What should it inherit from?
@@ -30,7 +30,7 @@ class Geocache(Waypoint):
         self.difficulty = difficulty
         self.size = size
     def __repr__(self):
-        return self.difficulty, self.size
+        return f'{self.name} {self.lat} {self.lon} {self.difficulty} {self.size}'
 
 
 # Make a new waypoint and print it out: "Catacombs", 41.70505, -121.51521
@@ -39,7 +39,7 @@ cata1= Waypoint("41.70505","-121.51521", "Catacombs" )
 
 # Without changing the following line, how can you make it print into something
 # more human-readable? Hint: Look up the `object.__str__` method
-print(Waypoint)
+print(cata1)
 
 # Make a new geocache "Newberry Views", diff 1.5, size 2, 44.052137, -121.41556
 
@@ -48,4 +48,4 @@ geo1= Geocache("44.052137", "-121.41556", "Newberry Views", "1.5", "2")
 
 
 # Print it--also make this print more nicely
-print(Geocache)
+print(geo1)
