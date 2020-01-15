@@ -22,3 +22,23 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+def myCal():
+  #Importing today's date for ease of use
+  today = datetime.today()
+
+  #The file name 14_cal.py counts as the first arg
+  if len(sys.argv) == 1:
+  #Returns todays month & year if no argument is passed
+    print(calendar.month(today.year, today.month))
+  #Passes arg to month
+  elif len(sys.argv) == 2:
+    print(calendar.month(today.year, int(sys.argv[1])))
+  #Passes first arg to month and second to year
+  elif len(sys.argv) == 3:
+    print(calendar.month(int(sys.argv[2]), int(sys.argv[1])))
+  else:
+      print("Please enter number of the month and year you wish to display.")
+
+
+myCal()
